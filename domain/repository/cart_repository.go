@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"cart/domain/model"
+	"github.com/wanghui0313/micro-service-cart/domain/model"
 	"gorm.io/gorm"
 )
 

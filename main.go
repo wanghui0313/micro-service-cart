@@ -1,24 +1,24 @@
 package main
 
 import (
-	"cart/domain/repository"
-	"cart/handler"
-	pb "cart/proto"
 	"fmt"
 	"github.com/asim/go-micro/plugins/wrapper/ratelimiter/ratelimit/v3"
 	"github.com/asim/go-micro/v3/registry"
 	ratelimit2 "github.com/juju/ratelimit"
 	"github.com/opentracing/opentracing-go"
+	"github.com/wanghui0313/micro-service-cart/domain/repository"
+	"github.com/wanghui0313/micro-service-cart/handler"
+	pb "github.com/wanghui0313/micro-service-cart/proto"
 	"github.com/wanghui0313/micro-service-common/common"
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
 	"time"
 
-	cartservice "cart/domain/service"
 	service "github.com/asim/go-micro/v3"
 	"github.com/asim/go-micro/v3/logger"
 	"github.com/go-micro/plugins/v3/registry/consul"
 	opentracing2 "github.com/go-micro/plugins/v3/wrapper/trace/opentracing"
+	cartservice "github.com/wanghui0313/micro-service-cart/domain/service"
 	"gorm.io/driver/mysql"
 )
 
