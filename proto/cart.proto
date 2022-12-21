@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package cart;
+
+option go_package = "./proto;cart";
+
+service Cart {
+  rpc Add(CartInfo) returns (ResAdd){}
+  rpc Clear(Clean) returns(Res){}
+  rpc Incr(Item)returns(Res){}
+  rpc Decr(Item)returns(Res){}
+  rpc DelItemById(CartId) returns (Res){}
+  rpc GetAll(CartFindAll) returns (CartAll){}
+}
+message CartAll{
+  repeated CartInfo carts=1;
+}
+message CartFindAll{
+  int64 user_id=1;
+}
+message CartId{
+  int64 id=1;
+}
+message CartInfo{
+  int64 id = 1;
+  int64 user_id = 2;
+  int64 product_id = 3;
+  int64 size_id = 4;
+  int64 num = 5;
+}
+
+message ResAdd{
+  int64 cart_id = 1;
+  string msg = 2;
+}
+
+message Clean{
+  int64 user_id = 1;
+}
+
+message Res{
+  string msg = 1;
+}
+
+message Item{
+  int64 id = 1;
+  int64 change_num = 2;
+}
